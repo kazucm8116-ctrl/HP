@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOUND OF DESIGN | 心躍るデザインを</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -55,16 +53,14 @@
     </style>
 
     <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.0.0",
+        "react-dom": "https://esm.sh/react-dom@19.0.0",
+        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client"
+      }
+    }
+    </script>
   </head>
   <body class="bg-gradient-mesh text-slate-900 overflow-x-hidden">
     <div id="root"></div>
@@ -108,12 +104,11 @@
 
       const Hero = () => (
         <section className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
-          {/* Decorative Blobs */}
           <div className="absolute top-20 -left-20 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
           <div className="absolute bottom-20 -right-20 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
 
           <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-left animate-in slide-in-from-left duration-1000">
+            <div className="text-left">
               <div className="inline-flex items-center gap-3 mb-8 bg-white/50 px-4 py-2 rounded-full border border-white backdrop-blur-sm">
                 <div className="sound-wave">
                   {[0.1, 0.3, 0.5, 0.2, 0.4].map((d, i) => (
@@ -140,25 +135,13 @@
               </div>
             </div>
             
-            <div className="relative group lg:block hidden animate-in zoom-in duration-1000">
+            <div className="relative group lg:block hidden">
               <div className="absolute -inset-8 bg-gradient-to-tr from-teal-400/20 to-amber-400/20 rounded-[3rem] blur-3xl group-hover:opacity-40 transition-opacity"></div>
               <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
                 alt="Modern Studio" 
                 className="relative rounded-[2.5rem] shadow-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-700 object-cover w-full h-[600px]"
               />
-              {/* Floating Indicator */}
-              <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 flex items-center gap-5 animate-bounce" style={{ animationDuration: '3s' }}>
-                <div className="w-14 h-14 bg-amber-400 rounded-2xl flex items-center justify-center text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">Active Works</p>
-                  <p className="text-2xl font-bold text-slate-800">50+ Global</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -230,7 +213,7 @@
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {filtered.map((item, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl hover:shadow-2xl transition-all animate-in fade-in duration-500">
+                  <div key={i} className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl hover:shadow-2xl transition-all">
                     <img src={item.img} alt={item.title} className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10">
                       <p className="text-teal-400 font-bold text-xs tracking-widest uppercase mb-3">{item.cat}</p>
@@ -246,7 +229,6 @@
 
       const Philosophy = () => (
         <section id="about" className="py-32 bg-teal-600 text-white overflow-hidden relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border-[20px] border-white/5 rounded-full animate-pulse"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
               <span className="text-teal-200 font-bold tracking-[0.5em] uppercase text-xs mb-10 block">Our Philosophy</span>
@@ -256,7 +238,7 @@
               </h2>
               <div className="w-20 h-1 bg-white/30 mx-auto mb-12"></div>
               <p className="text-xl md:text-2xl text-teal-100 font-medium leading-relaxed">
-                SOUND OF DESIGNは、ただ見た目を整えるだけではありません。<br />
+                SOUND OF DESIGNは、単に見た目を整えるだけではありません。<br />
                 そこにリズム、調和、そして感情を吹き込み、<br />
                 時代を超えて記憶に残る体験をプロデュースします。
               </p>
@@ -271,10 +253,6 @@
             <div>
               <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-teal-600 mb-6">Contact Us</h2>
               <p className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">新しいリズムを、<br />共に創りましょう。</p>
-              <p className="text-slate-500 text-lg mb-12 leading-relaxed font-medium">
-                プロジェクトのご相談、お見積もり、採用についてなど、
-                お気軽にお問い合わせください。
-              </p>
               <div className="space-y-8">
                 <div className="flex items-center gap-6 group">
                   <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-all">
@@ -289,7 +267,6 @@
                 </div>
               </div>
             </div>
-            
             <form className="bg-slate-50 p-10 md:p-14 rounded-[3rem] shadow-sm border border-slate-100" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -315,45 +292,12 @@
 
       const Footer = () => (
         <footer className="bg-slate-900 text-white py-24">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-4 gap-16 mb-20">
-              <div className="col-span-2">
-                <div className="flex items-center gap-2 mb-8">
-                  <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
-                  <div className="font-bold text-2xl tracking-tighter">SOUNDOFDESIGN</div>
-                </div>
-                <p className="text-slate-400 max-w-sm leading-relaxed mb-10 text-lg">
-                  視覚・聴覚・空間を調和させるクリエイティブチーム。<br />
-                  デザインを通じて、世界に心地よい音色を響かせます。
-                </p>
-                <div className="flex gap-10">
-                  {['Instagram', 'Twitter', 'Behance'].map(s => (
-                    <a key={s} href="#" className="text-sm font-bold text-slate-500 hover:text-white transition-colors uppercase tracking-[0.2em]">{s}</a>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg mb-8 uppercase tracking-widest text-teal-500">Navigation</h4>
-                <ul className="space-y-5 text-slate-400 font-medium">
-                  <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-                  <li><a href="#about" className="hover:text-white transition-colors">Philosophy</a></li>
-                  <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                  <li><a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg mb-8 uppercase tracking-widest text-teal-500">Contact</h4>
-                <p className="text-slate-400 leading-relaxed mb-4">Shibuya, Tokyo Japan<br />Creative District 1-2-3</p>
-                <p className="text-slate-400">hello@soundofdesign.jp</p>
-              </div>
+          <div className="container mx-auto px-6 text-center">
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
+              <div className="font-bold text-2xl tracking-tighter">SOUNDOFDESIGN</div>
             </div>
-            <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm font-medium">
-              <p>© 2024 SOUND OF DESIGN Inc. All rights reserved.</p>
-              <div className="flex gap-10">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              </div>
-            </div>
+            <p className="text-slate-500 text-sm font-medium">© 2024 SOUND OF DESIGN Inc. All rights reserved.</p>
           </div>
         </footer>
       );
