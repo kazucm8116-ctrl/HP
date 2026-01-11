@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOUND OF DESIGN | 心躍るデザインを</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -28,6 +29,9 @@
         .hover-float:hover { transform: translateY(-12px); }
         .fade-in { animation: fadeIn 1.2s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* フォームの入力フォーカス */
+        .input-focus:focus { outline: none; border-color: #0d9488; ring: 2px; ring-color: #0d9488; }
     </style>
 </head>
 <body class="text-slate-900 overflow-x-hidden">
@@ -112,13 +116,8 @@
                             </div>
                             <h4 class="text-2xl font-bold mb-4 text-slate-800">Branding</h4>
                             <p class="text-slate-500 leading-relaxed mb-6">ロゴ、カラー、タイポグラフィ。ブランドの「旋律」を視覚的なアイデンティティへと昇華させます。</p>
-                            <div class="mt-auto pt-4 flex gap-2">
-                                <span class="px-3 py-1 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 rounded-full">Logo</span>
-                                <span class="px-3 py-1 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 rounded-full">Identity</span>
-                            </div>
                         </div>
                     </div>
-
                     <div class="group relative md:mt-12">
                         <div class="absolute -inset-2 bg-gradient-to-b from-amber-400 to-orange-500 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm"></div>
                         <div class="relative p-10 rounded-[2rem] bg-white border border-white/50 shadow-sm group-hover:shadow-2xl transition-all duration-500 flex flex-col h-full overflow-hidden">
@@ -130,13 +129,8 @@
                             </div>
                             <h4 class="text-2xl font-bold mb-4 text-slate-800">Digital Product</h4>
                             <p class="text-slate-500 leading-relaxed mb-6">ユーザーの指先に心地よいテンポを。直感的で、使うたびに心が躍るデジタル体験を設計します。</p>
-                            <div class="mt-auto pt-4 flex gap-2">
-                                <span class="px-3 py-1 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 rounded-full">Web</span>
-                                <span class="px-3 py-1 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 rounded-full">App</span>
-                            </div>
                         </div>
                     </div>
-
                     <div class="group relative">
                         <div class="absolute -inset-2 bg-gradient-to-b from-slate-700 to-slate-900 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm"></div>
                         <div class="relative p-10 rounded-[2rem] bg-white border border-white/50 shadow-sm group-hover:shadow-2xl transition-all duration-500 flex flex-col h-full overflow-hidden">
@@ -148,24 +142,44 @@
                             </div>
                             <h4 class="text-2xl font-bold mb-4 text-slate-800">Space Design</h4>
                             <p class="text-slate-500 leading-relaxed mb-6">空間を一つのアンサンブルとして。光、素材、配置が調和し、物語を奏でる場所を創造します。</p>
-                            <div class="mt-auto pt-4 flex gap-2">
-                                <span class="px-3 py-1 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 rounded-full">Interior</span>
-                                <span class="px-3 py-1 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 rounded-full">Event</span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="contact" class="py-32 bg-slate-900 text-white relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal-500/10 rounded-full blur-[120px]"></div>
+            
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8">Let's Orchestrate.</h2>
+                    <p class="text-slate-400 text-lg md:text-xl mb-12">あなたのブランドの「音色」を、世界に響かせましょう。プロジェクトの相談はお気軽に。</p>
+                    
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                        <input type="text" placeholder="お名前" class="bg-white/10 border border-white/20 p-4 rounded-xl focus:outline-none focus:border-teal-500 transition-colors">
+                        <input type="email" placeholder="メールアドレス" class="bg-white/10 border border-white/20 p-4 rounded-xl focus:outline-none focus:border-teal-500 transition-colors">
+                        <textarea placeholder="メッセージ" rows="4" class="md:col-span-2 bg-white/10 border border-white/20 p-4 rounded-xl focus:outline-none focus:border-teal-500 transition-colors"></textarea>
+                        <button type="button" class="md:col-span-2 bg-teal-600 hover:bg-teal-500 text-white font-bold py-5 rounded-xl shadow-2xl transition-all active:scale-95">
+                            セッションを開始する
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-slate-900 text-white py-16 text-center">
+    <footer class="bg-slate-950 text-white py-16 text-center border-t border-white/5">
         <div class="container mx-auto px-6">
-            <div class="flex items-center justify-center gap-3 mb-6">
-                <img src="logo.png" alt="Logo" class="w-auto h-8 shadow-lg rounded-lg">
-                <span class="font-bold tracking-tighter text-lg">SOUND OF DESIGN</span>
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <img src="logo.png" alt="Logo" class="w-auto h-8 shadow-lg rounded-lg opacity-90">
+                <span class="font-bold tracking-tighter text-xl">SOUND OF DESIGN</span>
             </div>
-            <p class="text-slate-500 text-xs tracking-[0.3em] uppercase">© 2026 SOUND OF DESIGN</p>
+            <div class="flex justify-center gap-8 mb-12 text-slate-500 font-bold text-xs tracking-widest uppercase">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <p class="text-slate-600 text-[10px] tracking-[0.5em] uppercase">© 2026 SOUND OF DESIGN</p>
         </div>
     </footer>
 
